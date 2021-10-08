@@ -13,7 +13,6 @@ services:
          - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
    catalyst:
-      # build: .    # image is built from the Dockerfile in the current directory
       image: labconowl/toastr
       restart: always
       volumes:
@@ -25,7 +24,6 @@ services:
          - mysql
 
    theschwartz:
-      # build: .    # image is built from the Dockerfile in the current directory
       image: labconowl/toastr
       restart: always
       volumes:
