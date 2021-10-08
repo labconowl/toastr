@@ -18,4 +18,4 @@ This dockerized, standalone distribution of toaSTR is a multi-container applicat
 In case you want to reset the application, run `docker-compose down -v`. Warning: This deletes all app data and configuration.
 
 ## Contact
-Sebastian Ganschow <sganschow@lacon-owl.de>
+Sebastian Ganschow <sganschow@labcon-owl.de>
