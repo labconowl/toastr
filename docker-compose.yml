@@ -1,0 +1,43 @@
+version: '3'
+services:
+   mysql:
+      image: mysql:5.7
+      command: mysqld --sql_mode=""
+      restart: always
+      environment:
+         MYSQL_ROOT_PASSWORD: local
+      ports:
+         - 3306:3306
+      volumes:
+         - mysql_data:/var/lib/mysql     # creates the volume `toastrdocker_mysql_data` in `/var/lib/docker/volumes/`
+         - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+   catalyst:
+      # build: .    # image is built from the Dockerfile in the current directory
+      image: labconowl/toastr
+      restart: always
+      volumes:
+        - upload:/upload
+      command: ./script/toastr_server.pl -d
+      ports:
+         - 3000:3000
+      depends_on:
+         - mysql
+
+   theschwartz:
+      # build: .    # image is built from the Dockerfile in the current directory
+      image: labconowl/toastr
+      restart: always
+      volumes:
+        - upload:/upload      
+      command: ./bin/TheSchwartzWorker.pl
+      depends_on:
+         - mysql
+      environment:
+         PARALLEL_WORKERS: 4
+
+volumes:
+   mysql:
+      driver: local
+   mysql_data:
+   upload:
