@@ -11,10 +11,14 @@ This dockerized, standalone distribution of toaSTR is a multi-container applicat
 5. Open a command prompt (terminal), navigate to the `toastr` directory and run `docker-compose pull` (Linux: `sudo docker-compose pull`) to pull the toaSTR service images from [Docker Hub](https://hub.docker.com/repository/docker/labconowl/toastr).
 
 ## Usage
-1. Start toaSTR: `docker-compose up -d` (Linux: `sudo docker-compose up -d`). On first start, please wait one minute to complete database initialization before proceeding to the next step.
+1. Start toaSTR: `docker-compose up -d` (Linux: `sudo docker-compose up -d`). On first start, please wait one minute to complete the database initialization before proceeding to the next step.
 2. Open `localhost:3000` in your browser and login with username `admin` and password `toastrdocker`. Please refer to the manual inside the app for usage instructions.
 3. Stop toaSTR: `docker-compose down` (Linux: `sudo docker-compose down`)
 
+## Update
+Stop toaSTR and run `docker-compose pull` (Linux: `sudo docker-compose pull`) from time to time to pull the most recent update.
+
+## Reset
 In case you want to reset the application, run `docker-compose down -v` (Linux: `sudo docker-compose down -v`). Warning: This deletes all app data and configuration.
 
 ## Support
