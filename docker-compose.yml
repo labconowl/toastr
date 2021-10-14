@@ -23,7 +23,7 @@ services:
       depends_on:
          - mysql
 
-   theschwartz:
+   jobqueue:
       image: labconowl/toastr
       restart: always
       volumes:
