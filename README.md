@@ -8,7 +8,7 @@ This dockerized, standalone distribution of toaSTR is a multi-container applicat
 2. Install Docker Compose (Linux users only): https://docs.docker.com/compose/install/
 3. Clone or download this repository
 4. Optionally configure the number of CPU cores used by toaSTR. Open the file `docker-compose.yml` in a text editor and search for the key `theschwartz` -> `environment` -> `PARALLEL_WORKERS`. Set the value to an appropriate number of CPU cores for your machine (default: 4).
-5. Open a command prompt (terminal), navigate to the `toastr` directory and run `docker-compose pull` (Linux: `sudo docker-compose pull`) to pull the toaSTR service images from [Docker Hub](https://hub.docker.com/repository/docker/labconowl/toastr).
+5. Open a command prompt (terminal), navigate to the `toastr` directory and run `docker-compose pull` (Linux: `sudo docker-compose pull`) to pull the toaSTR service images from [Docker Hub](https://hub.docker.com/r/labconowl/toastr).
 
 ## Usage
 1. Start toaSTR: `docker-compose up -d` (Linux: `sudo docker-compose up -d`). On first start, please wait one minute to complete the database initialization before proceeding to the next step.
