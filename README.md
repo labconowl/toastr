@@ -1,6 +1,8 @@
 # toaSTR
 toaSTR is a browser-based application for the analysis of short tandem repeats from massively parallel sequencing data. It runs on macOS, Windows, and Linux.
 
+Original publication: https://www.fsigenetics.com/article/S1872-4973(18)30063-2/fulltext
+
 ## Installation
 This dockerized, standalone distribution of toaSTR is a multi-container application that depends on multiple services, including a MySQL database and a job queue system which processes the analysis tasks. The application’s services are configured in a Docker Compose file (`docker-compose.yml`) and automatically handled by the Docker platform. When toaSTR is started for the first time, it reads the `init.sql` file to initialize the toaSTR database.
 
